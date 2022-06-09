@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "809084920146",
+    "project_id": "trivago-12ee3",
+    "storage_bucket": "trivago-12ee3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:809084920146:android:49b7577c1edc240cc35a8b",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_8"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "809084920146-je8f6i0hqv3vqbb4evmrc0th9m379dsv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDupSR1jCdiYwwBJN5QwN8qTdW7JT77eHc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "809084920146-je8f6i0hqv3vqbb4evmrc0th9m379dsv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
