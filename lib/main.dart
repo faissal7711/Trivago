@@ -48,8 +48,8 @@ class MyApp extends StatelessWidget {
         StudentScreen.routeName: (context) => const StudentScreen(),
         PaymentScreen.routeName: (context) => const PaymentScreen(),
       },
-      home: const TabsScreen(),
-//      home: const LoginScreen(),
+//      home: const TabsScreen(),
+      home: const LoginScreen(),
     );
   }
 }
