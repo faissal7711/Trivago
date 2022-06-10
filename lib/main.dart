@@ -4,6 +4,7 @@ import 'package:flutter_application_8/screens/Login_screen/login_screen.dart';
 import 'screens/ItemsScreen1.dart';
 import 'screens/ItemsScreen2.dart';
 import 'screens/ItemsScreen3.dart';
+import 'screens/payment.dart';
 import 'screens/register_screen/register_screen.dart';
 import 'screens/student_screen.dart';
 import 'screens/tabs_screen.dart';
@@ -45,9 +46,10 @@ class MyApp extends StatelessWidget {
         ItemsScreen2.routeName: (context) => const ItemsScreen2(),
         ItemsScreen3.routeName: (context) => const ItemsScreen3(),
         StudentScreen.routeName: (context) => const StudentScreen(),
+        PaymentScreen.routeName: (context) => const PaymentScreen(),
       },
-//      home: const TabsScreen(),
-      home: const LoginScreen(),
+      home: const TabsScreen(),
+//      home: const LoginScreen(),
     );
   }
 }

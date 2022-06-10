@@ -7,6 +7,7 @@ import '../widgets/person_widget.dart';
 
 class ItemsScreen1 extends StatelessWidget {
   static const routeName = '/Item_screen';
+
 //  static List<ItemWidget>? list;
 
   const ItemsScreen1({Key? key}) : super(key: key);
@@ -76,6 +77,8 @@ class ItemsScreen1 extends StatelessWidget {
                         title: item['title'],
                         name: item['name'],
                         rate: item['rate'],
+                        fav: item['fav'],
+                        price: item['price'],
                       ))
                   .toList(),
             ),

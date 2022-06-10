@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import '../services/theme.dart';
 import 'FavoriteScreen.dart';
 import 'category_meals_screen.dart';
+import 'payment.dart';
 import 'student_screen.dart';
-
-// import 'categories_screen.dart';
-// import 'revision/revision.dart';
 
 class TabsScreen extends StatefulWidget {
   static const routeName = '/tabs_screen';
@@ -26,7 +24,7 @@ class _TabsScreenState extends State<TabsScreen> {
       'title': 'Trivago',
     },
     {
-      'page': FavoriteScreen(isEmpty: true,),
+      'page': FavoriteScreen(/*isEmpty: true,*/),
       'title': 'Favorite Screen',
     },
     {
@@ -45,7 +43,7 @@ class _TabsScreenState extends State<TabsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //      backgroundColor: Theme.of(context).primaryColor,
+//       backgroundColor: Theme.of(context).primaryColor,
 //       drawer: MainDrawer(),
       appBar: AppBar(
         centerTitle: true,
@@ -53,7 +51,14 @@ class _TabsScreenState extends State<TabsScreen> {
           _page[_selectPageIndex]['title'],
 //           style: StyleTitle,
         ),
-        //        leading: Icon(Icons.menu,),
+        leading: InkWell(
+          onTap: (){
+            Navigator.of(context).pushNamed(PaymentScreen.routeName);
+          },
+          child: const Icon(
+            Icons.shopping_cart,
+          ),
+        ),
       ),
       body: Container(
         height: MediaQuery.of(context).size.height,
@@ -71,7 +76,7 @@ class _TabsScreenState extends State<TabsScreen> {
         onTap: _selectPage,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.category_outlined, size: 25),
+            icon: Icon(Icons.category, size: 25),
             label: 'Categories',
           ),
           BottomNavigationBarItem(

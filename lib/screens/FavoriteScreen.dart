@@ -2,10 +2,14 @@
 
 import 'package:flutter/material.dart';
 
-class FavoriteScreen extends StatelessWidget {
-  final bool isEmpty;
+import '../widgets/item_widget.dart';
 
-  const FavoriteScreen({Key? key, required this.isEmpty}) : super(key: key);
+class FavoriteScreen extends StatelessWidget {
+//  final bool isEmpty;
+
+  const FavoriteScreen({Key? key /*, required this.isEmpty*/
+      })
+      : super(key: key);
 
 //  var date = DateTime.now();
 
@@ -14,53 +18,48 @@ class FavoriteScreen extends StatelessWidget {
     return Scaffold(
 //      appBar: AppBar(
 //          primary: true, centerTitle: true, title: const Text("Favorite Screen")),
-      body: isEmpty
+      body: !ItemWidget.favorite /*isEmpty*/
           ? Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const[
+              children: const [
                 Center(
-                  child: Icon(Icons.favorite_border,size: 80,),
+                  child: Icon(
+                    Icons.favorite_border,
+                    size: 80,
+                  ),
                 ),
                 Text(
                   'No Favorite found,',
                   style: TextStyle(
                     fontSize: 33,
-//                    color: Colors.pink,
+                    color: Colors.deepOrange,
                   ),
                 ),
                 Text(
                   'can\'t see any',
                   style: TextStyle(
                     fontSize: 33,
-//                    color: Colors.pink,
+                    color: Colors.red,
                   ),
                 ),
               ],
             )
-          : ListView(
-              children:const <Widget>[
-                SizedBox(
-                  height: 10,
-                ),
-                // NotificationItem(
-                //   img: 'assets/profile.png',
-                //   notify: 'Kamilia Mohamed Liked your Qustion',
-                //   time: '1',
-                //   function: () {},
-                // ),
-                // NotificationItem(
-                //   img: 'assets/profile.png',
-                //   notify: 'Kamilia Mohamed Liked your Qustion',
-                //   time: '15',
-                //   function: () {},
-                // ),
-                // NotificationItem(
-                //   img: 'assets/profile.png',
-                //   notify: 'Kamilia Mohamed Liked your Qustion',
-                //   time: '31',
-                //   function: () {},
-                // ),
-              ],
+          : GridView(
+              key: GlobalKey(),
+              physics: const BouncingScrollPhysics(),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+              ),
+              children: item_data1
+                  .map((item) => ItemWidget(
+                        img: item['img'],
+                        title: item['title'],
+                        name: item['name'],
+                        rate: item['rate'],
+                        fav: item['fav'],
+                price: item['price'],
+                      ))
+                  .toList(),
             ),
     );
   }

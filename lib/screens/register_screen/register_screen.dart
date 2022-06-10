@@ -11,6 +11,7 @@ import '../../main.dart';
 import '../../services/auth.dart';
 import '../../services/theme.dart';
 import '../Login_screen/login_screen.dart';
+import '../tabs_screen.dart';
 // import '../doctors_body.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -48,7 +49,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             CustomStack(
               heightScreen: heightScreen,
 //              title: 'لغتي الجمية',
-              assetImage: 'assets/icon/icon_login.png',
+              assetImage: 'assets/icon_login.png',
             ),
             Center(
               child: Text(
@@ -254,7 +255,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         try {
           await _auth.signUp(_email, _password).then((value) {});
 //        modelHud.changIsLoading(false);
-           Navigator.pushNamed(context, MyHomePage.routeName);
+           Navigator.pushNamed(context, TabsScreen.routeName);
         } catch (e) {
 //        modelHud.changIsLoading(false);
           Scaffold.of(context).showSnackBar(

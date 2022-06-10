@@ -7,6 +7,7 @@ import '../widgets/person_widget.dart';
 
 class ItemsScreen2 extends StatelessWidget {
   static const routeName = '/Item_screen2';
+
 //  static List<ItemWidget>? list;
 
   const ItemsScreen2({Key? key}) : super(key: key);
@@ -17,7 +18,8 @@ class ItemsScreen2 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('second class hotel'),),
+        title: const Text('second class hotel'),
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -75,6 +77,8 @@ class ItemsScreen2 extends StatelessWidget {
                         title: item['title'],
                         name: item['name'],
                         rate: item['rate'],
+                        fav: item['fav'],
+                price: item['price'],
                       ))
                   .toList(),
             ),

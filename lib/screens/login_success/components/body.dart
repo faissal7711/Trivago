@@ -10,7 +10,7 @@ class Body extends StatelessWidget {
         children: [
           SizedBox(height: MediaQuery.of(context).size.height * 0.04),
           Image.asset(
-            "assets/images/success.png",
+            "assets/success-24.png",
             height: MediaQuery.of(context).size.height * 0.35, //35%
           ),
           SizedBox(height: MediaQuery.of(context).size.height * 0.08),

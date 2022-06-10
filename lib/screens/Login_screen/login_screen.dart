@@ -11,6 +11,7 @@ import '../../main.dart';
 import '../../services/auth.dart';
 import '../../services/theme.dart';
 import '../register_screen/register_screen.dart';
+import '../tabs_screen.dart';
 // import '../doctors_body.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -48,7 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
             CustomStack(
               heightScreen: heightScreen,
 //              title: 'لغتي الجمية',
-              assetImage: 'assets/icon/icon_login.png',
+              assetImage: 'assets/icon_login.png',
             ),
             Center(
               child: Text('LoginScreen',
@@ -76,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 },
                 cursorColor: Colors.white,
                 decoration: InputDecoration(
-                  hintText: 'hint',
+                  hintText: 'Enter your email',
                   fillColor: Colors.white,
                   prefixIcon: Icon(
                     Icons.email,
@@ -112,7 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 horizontal: 30.0,
               ),
               child: TextFormField(
-                obscureText: 'hint' == 'Enter your password' ? true : false,
+                obscureText: true,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'errVal';
@@ -121,7 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 },
                 cursorColor: Colors.white,
                 decoration: InputDecoration(
-                  hintText: 'hint',
+                  hintText: 'Enter your password',
                   fillColor: Colors.white,
                   prefixIcon: Icon(
                     Icons.lock,
@@ -252,7 +253,7 @@ class _LoginScreenState extends State<LoginScreen> {
           await _auth.signIn(_email, _password).then((value) {});
 //        modelHud.changIsLoading(false);
           // Navigator.pushNamed(context, DoctorsScreen.routeName);
-          Navigator.pushNamed(context, MyHomePage.routeName);
+          Navigator.pushNamed(context, TabsScreen.routeName);
         } catch (e) {
 //        modelHud.changIsLoading(false);
           Scaffold.of(context).showSnackBar(
