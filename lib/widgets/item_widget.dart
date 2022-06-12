@@ -89,11 +89,11 @@ class _ItemWidgetState extends State<ItemWidget> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Icon(
-                        ItemWidget.favorite
+                        fav
                             ? Icons.favorite
                             : Icons.favorite_border,
                         color:
-                            ItemWidget.favorite ? Colors.red : Colors.black45,
+                            fav ? Colors.red : Colors.black45,
                       ),
                     )),
               ),
@@ -245,7 +245,7 @@ List item_data1 = [
     'img': 'assets/h1_1.jpg',
     'rate': 4.8,
     'price': 3700,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Sheraton Cairo Hotel',
@@ -253,7 +253,7 @@ List item_data1 = [
     'img': 'assets/h1_2.jpg',
     'rate': 4.9,
     'price': 3500,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Pyramisa Cairo Suites',
@@ -261,7 +261,7 @@ List item_data1 = [
     'img': 'assets/h1_3.jpg',
     'rate': 4.5,
     'price': 3900,
-    'fav': ItemWidget.favorite,
+    'fav': true,
   },
   {
     'name': 'Horizon Shahrazad Hotel',
@@ -269,7 +269,7 @@ List item_data1 = [
     'img': 'assets/h1_4.jpg',
     'rate': 4.6,
     'price': 4000,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Indiana Hotel',
@@ -277,7 +277,7 @@ List item_data1 = [
     'img': 'assets/h1_5.jpg',
     'rate': 4.9,
     'price': 3100,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Holidays Express Hotel',
@@ -285,7 +285,7 @@ List item_data1 = [
     'img': 'assets/h1_6.jpg',
     'rate': 4.4,
     'price': 3700,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
 ];
 
@@ -296,7 +296,7 @@ List item_data2 = [
     'img': 'assets/h2_1.jpg',
     'rate': 3.8,
     'price': 2500,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'فندق نفرتيتى',
@@ -304,7 +304,7 @@ List item_data2 = [
     'img': 'assets/h2_2.jpg',
     'rate': 3.5,
     'price': 2300,
-    'fav': ItemWidget.favorite,
+    'fav': true,
   },
   {
     'name': 'Djorff Palace',
@@ -312,7 +312,7 @@ List item_data2 = [
     'img': 'assets/h2_3.jpg',
     'rate': 3.7,
     'price': 2300,
-    'fav': ItemWidget.favorite,
+    'fav': true,
   },
   {
     'name': 'فندق سوزانا الأقصر',
@@ -320,7 +320,7 @@ List item_data2 = [
     'img': 'assets/h2_4.jpg',
     'rate': 3.3,
     'price': 2900,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'M/S Nephtis Nile Cruise',
@@ -328,7 +328,7 @@ List item_data2 = [
     'img': 'assets/h2_5.jpg',
     'rate': 3.8,
     'price': 2000,
-    'fav': ItemWidget.favorite,
+    'fav': true,
   },
   {
     'name': 'هيلتون الاقصر ريزورت اند سبا',
@@ -336,7 +336,7 @@ List item_data2 = [
     'img': 'assets/h2_6.jpg',
     'rate': 3.0,
     'price': 2100,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Steigenberger Resort Achti',
@@ -344,7 +344,7 @@ List item_data2 = [
     'img': 'assets/h2_7.jpg',
     'rate': 3.9,
     'price': 2000,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Sonesta St. George Hotel - Convention Center',
@@ -352,7 +352,7 @@ List item_data2 = [
     'img': 'assets/h2_8.jpg',
     'rate': 3.6,
     'price': 2800,
-    'fav': ItemWidget.favorite,
+    'fav': true,
   },
 ];
 
@@ -363,7 +363,7 @@ List item_data3 = [
     'img': 'assets/h3_1.jpg',
     'rate': 2.8,
     'price': 1000,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Comfort Pyramids',
@@ -371,7 +371,7 @@ List item_data3 = [
     'img': 'assets/h3_2.jpg',
     'rate': 3.0,
     'price': 1500,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Royal Inn Residence',
@@ -379,7 +379,7 @@ List item_data3 = [
     'img': 'assets/h3_3.jpg',
     'rate': 3.0,
     'price': 500,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Victory Of Downtown Hotel',
@@ -387,7 +387,7 @@ List item_data3 = [
     'img': 'assets/h3_4.jpg',
     'rate': 3.1,
     'price': 800,
-    'fav': ItemWidget.favorite,
+    'fav': true,
   },
   {
     'name': 'Pyramid Edge Hotel',
@@ -395,7 +395,7 @@ List item_data3 = [
     'img': 'assets/h3_5.jpg',
     'rate': 3.2,
     'price': 1500,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Atlas International Hotels',
@@ -403,7 +403,7 @@ List item_data3 = [
     'img': 'assets/h3_6.jpg',
     'rate': 3.1,
     'price': 1300,
-    'fav': ItemWidget.favorite,
+    'fav': true,
   },
   {
     'name': 'Best View Pyramids Hotel',
@@ -411,7 +411,7 @@ List item_data3 = [
     'img': 'assets/h3_7.jpg',
     'rate': 2.8,
     'price': 1000,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Victory Of Downtown Hotel',
@@ -419,7 +419,7 @@ List item_data3 = [
     'img': 'assets/h3_8.jpg',
     'rate': 3.0,
     'price': 900,
-    'fav': ItemWidget.favorite,
+    'fav': true,
   },
 ];
 
@@ -430,7 +430,7 @@ List item_data = [
     'img': 'assets/h1_1.jpg',
     'rate': 4.8,
     'price': 3700,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Sheraton Cairo Hotel',
@@ -438,7 +438,7 @@ List item_data = [
     'img': 'assets/h1_2.jpg',
     'rate': 4.9,
     'price': 3500,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Pyramisa Cairo Suites',
@@ -446,7 +446,7 @@ List item_data = [
     'img': 'assets/h1_3.jpg',
     'rate': 4.5,
     'price': 3900,
-    'fav': ItemWidget.favorite,
+    'fav': true,
   },
   {
     'name': 'Horizon Shahrazad Hotel',
@@ -454,7 +454,7 @@ List item_data = [
     'img': 'assets/h1_4.jpg',
     'rate': 4.6,
     'price': 4000,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Indiana Hotel',
@@ -462,7 +462,7 @@ List item_data = [
     'img': 'assets/h1_5.jpg',
     'rate': 4.9,
     'price': 3100,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Holidays Express Hotel',
@@ -470,7 +470,7 @@ List item_data = [
     'img': 'assets/h1_6.jpg',
     'rate': 4.4,
     'price': 3700,
-    'fav': ItemWidget.favorite,
+    'fav': true,
   },
   {
     'name': 'Pyramisa Hotel Luxor',
@@ -478,7 +478,7 @@ List item_data = [
     'img': 'assets/h2_1.jpg',
     'rate': 3.8,
     'price': 2500,
-    'fav': ItemWidget.favorite,
+    'fav': true,
   },
   {
     'name': 'فندق نفرتيتى',
@@ -486,7 +486,7 @@ List item_data = [
     'img': 'assets/h2_2.jpg',
     'rate': 3.5,
     'price': 2300,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Djorff Palace',
@@ -494,7 +494,7 @@ List item_data = [
     'img': 'assets/h2_3.jpg',
     'rate': 3.7,
     'price': 2300,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'فندق سوزانا الأقصر',
@@ -502,7 +502,7 @@ List item_data = [
     'img': 'assets/h2_4.jpg',
     'rate': 3.3,
     'price': 2900,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'M/S Nephtis Nile Cruise',
@@ -510,7 +510,7 @@ List item_data = [
     'img': 'assets/h2_5.jpg',
     'rate': 3.8,
     'price': 2000,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'هيلتون الاقصر ريزورت اند سبا',
@@ -518,7 +518,7 @@ List item_data = [
     'img': 'assets/h2_6.jpg',
     'rate': 3.0,
     'price': 2100,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Steigenberger Resort Achti',
@@ -526,7 +526,7 @@ List item_data = [
     'img': 'assets/h2_7.jpg',
     'rate': 3.9,
     'price': 2000,
-    'fav': ItemWidget.favorite,
+    'fav': true,
   },
   {
     'name': 'Sonesta St. George Hotel - Convention Center',
@@ -534,7 +534,7 @@ List item_data = [
     'img': 'assets/h2_8.jpg',
     'rate': 3.6,
     'price': 2800,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Nile Villa Hotel',
@@ -542,7 +542,7 @@ List item_data = [
     'img': 'assets/h3_1.jpg',
     'rate': 2.8,
     'price': 1000,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Comfort Pyramids',
@@ -550,7 +550,7 @@ List item_data = [
     'img': 'assets/h3_2.jpg',
     'rate': 3.0,
     'price': 1500,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Royal Inn Residence',
@@ -558,7 +558,7 @@ List item_data = [
     'img': 'assets/h3_3.jpg',
     'rate': 3.0,
     'price': 500,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Victory Of Downtown Hotel',
@@ -566,7 +566,7 @@ List item_data = [
     'img': 'assets/h3_4.jpg',
     'rate': 3.1,
     'price': 800,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Pyramid Edge Hotel',
@@ -574,7 +574,7 @@ List item_data = [
     'img': 'assets/h3_5.jpg',
     'rate': 3.2,
     'price': 1500,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Atlas International Hotels',
@@ -582,7 +582,7 @@ List item_data = [
     'img': 'assets/h3_6.jpg',
     'rate': 3.1,
     'price': 1300,
-    'fav': ItemWidget.favorite,
+    'fav': true,
   },
   {
     'name': 'Best View Pyramids Hotel',
@@ -590,7 +590,7 @@ List item_data = [
     'img': 'assets/h3_7.jpg',
     'rate': 2.8,
     'price': 1000,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
   {
     'name': 'Victory Of Downtown Hotel',
@@ -598,7 +598,7 @@ List item_data = [
     'img': 'assets/h3_8.jpg',
     'rate': 3.0,
     'price': 900,
-    'fav': ItemWidget.favorite,
+    'fav': false,
   },
 ];
 
