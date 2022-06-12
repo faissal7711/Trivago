@@ -23,7 +23,7 @@ class PaymentScreen extends StatefulWidget {
 }
 
 class _PaymentScreenState extends State<PaymentScreen> {
-  int _counter = 0;
+  int _counter = 1;
 
   void _incrementCounter() {
     setState(() {
@@ -33,7 +33,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
   void _decrementCounter() {
     setState(() {
-      if (_counter > 0)
+      if (_counter > 1)
         _counter--;
       else
         Scaffold.of(context).showSnackBar(
@@ -41,7 +41,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
             content: Text(
               "Number days can\'t less than 1",
             ),
-            backgroundColor: Colors.green,
+            backgroundColor: Colors.red,
           ),
         );
     });
