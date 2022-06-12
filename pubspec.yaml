@@ -56,7 +56,7 @@ dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/hotel_booking_icon.png"
+  image_path: "assets/hotel_booking.png"
 #  image_path: "assets/icon/icon_app.jpg"
 
 dev_dependencies:

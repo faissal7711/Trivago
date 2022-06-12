@@ -49,7 +49,15 @@ class _LoginScreenState extends State<LoginScreen> {
             CustomStack(
               heightScreen: heightScreen,
 //              title: 'لغتي الجمية',
-              assetImage: 'assets/icon_login.png',
+              assetImage: 'assets/hotel_booking_icon.png',
+            ),
+            Center(
+              child: Text('Travel',
+                  style: TextStyle(
+                     color: Colors.orangeAccent,
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.w900,
+                  )),
             ),
             Center(
               child: Text('LoginScreen',
