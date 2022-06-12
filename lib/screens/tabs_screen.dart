@@ -25,7 +25,7 @@ class _TabsScreenState extends State<TabsScreen> {
   final List<Map<String, dynamic>> _page = const [
     {
       'page': CategoryMealsScreen(),
-      'title': 'Trivago',
+      'title': 'Travel',
     },
     {
       'page': FavoriteScreen(/*isEmpty: true,*/),
