@@ -1,7 +1,11 @@
+import 'dart:async';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../services/theme.dart';
 import 'FavoriteScreen.dart';
 import 'category_meals_screen.dart';
+import 'empaty_payment_screen.dart';
 import 'payment.dart';
 import 'student_screen.dart';
 
@@ -52,8 +56,14 @@ class _TabsScreenState extends State<TabsScreen> {
 //           style: StyleTitle,
         ),
         leading: InkWell(
-          onTap: (){
-            Navigator.of(context).pushNamed(PaymentScreen.routeName);
+          onTap: () {
+            Timer(
+                const Duration(seconds: 2),
+                () => Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                        builder: (_) => EmpatyPaymentScreen())));
+//            Navigator.of(context).pushNamed(PaymentScreen.routeName,arguments: '');
           },
           child: const Icon(
             Icons.shopping_cart,

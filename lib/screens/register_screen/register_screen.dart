@@ -65,6 +65,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               height: heightScreen * 0.05,
             ),
 
+
             Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: 30.0,
@@ -79,7 +80,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 },
                 cursorColor: Colors.white,
                 decoration: InputDecoration(
-                  hintText: 'hint',
+                  hintText: 'Enter your email',
                   fillColor: Colors.white,
                   prefixIcon: Icon(
                     Icons.email,
@@ -115,7 +116,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 horizontal: 30.0,
               ),
               child: TextFormField(
-                obscureText: 'hint' == 'Enter your password' ? true : false,
+                obscureText: true,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'errVal';
@@ -124,7 +125,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 },
                 cursorColor: Colors.white,
                 decoration: InputDecoration(
-                  hintText: 'hint',
+                  hintText: 'Enter your password',
                   fillColor: Colors.white,
                   prefixIcon: Icon(
                     Icons.lock,
@@ -150,6 +151,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 },
               ),
             ),
+
 
             // CustomTextField(
             //   hint: 'Enter your email',

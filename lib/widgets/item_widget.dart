@@ -1,12 +1,18 @@
 // ignore_for_file: sized_box_for_whitespace, constant_identifier_names
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
+import '../screens/payment.dart';
+
 class ItemWidget extends StatefulWidget {
-  final String name, img,price;
+  final String name, img;
   final String? title;
+  final int price;
+
   final double rate;
-  static bool favorite=false;
+  static bool favorite = false;
   final bool fav;
 
   const ItemWidget({
@@ -25,7 +31,31 @@ class ItemWidget extends StatefulWidget {
 
 class _ItemWidgetState extends State<ItemWidget> {
   late bool fav = false;
+
   late bool adding = false;
+
+//  void selectCategory(BuildContext context) {
+//    Navigator.of(context).pushNamed(
+//      CategoryMealsScreen.routeName,
+//      arguments: {
+//        'id': id,
+//        'title': title,
+//      },
+//    );
+//  }
+
+  void selectMeal(BuildContext ctx) {
+    Timer(
+        const Duration(seconds: 2),
+        () => Navigator.of(ctx).pushNamed(PaymentScreen.routeName,
+            arguments: widget
+                .name) /*.then((value) {
+      if(value != null) removeItem(value);
+      Timer(const Duration(seconds: 2),()=>Navigator.push(context, CupertinoPageRoute(builder: (_)=>const MyHomePage())));
+    })*/
+        );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -59,8 +89,11 @@ class _ItemWidgetState extends State<ItemWidget> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Icon(
-                        ItemWidget.favorite?Icons.favorite:Icons.favorite_border,
-                        color: ItemWidget.favorite?Colors.red:Colors.black45,
+                        ItemWidget.favorite
+                            ? Icons.favorite
+                            : Icons.favorite_border,
+                        color:
+                            ItemWidget.favorite ? Colors.red : Colors.black45,
                       ),
                     )),
               ),
@@ -71,7 +104,7 @@ class _ItemWidgetState extends State<ItemWidget> {
               Expanded(
                 child: InkWell(
                     onTap: () {
-                      adding=!adding;
+                      adding = !adding;
                       Scaffold.of(context).showSnackBar(
                         const SnackBar(
                           content: Text(
@@ -80,9 +113,12 @@ class _ItemWidgetState extends State<ItemWidget> {
                           backgroundColor: Colors.green,
                         ),
                       );
+                      selectMeal(context);
                     },
                     child: Icon(
-                      adding?Icons.shopping_cart:Icons.shopping_cart_outlined,
+                      adding
+                          ? Icons.shopping_cart
+                          : Icons.shopping_cart_outlined,
                       color: Colors.black45,
                     )),
               ),
@@ -188,7 +224,10 @@ class _ItemWidgetState extends State<ItemWidget> {
               Row(
                 children: [
                   Text('${widget.rate}'),
-                  const Icon(Icons.star,size: 15,)
+                  const Icon(
+                    Icons.star,
+                    size: 15,
+                  )
                 ],
               ),
             ],
@@ -205,48 +244,48 @@ List item_data1 = [
     // 'title': 'discrption discrption discrption',
     'img': 'assets/h1_1.jpg',
     'rate': 4.8,
-    'price': '3700',
-    'fav':ItemWidget.favorite,
+    'price': 3700,
+    'fav': ItemWidget.favorite,
   },
   {
     'name': 'Sheraton Cairo Hotel',
     // 'title': 'discrption discrption discrption',
     'img': 'assets/h1_2.jpg',
-    'rate': 4.8,
-    'price': '3500',
-    'fav':ItemWidget.favorite,
+    'rate': 4.9,
+    'price': 3500,
+    'fav': ItemWidget.favorite,
   },
   {
     'name': 'Pyramisa Cairo Suites',
     // 'title': 'discrption discrption discrption',
     'img': 'assets/h1_3.jpg',
-    'rate': 4.8,
-    'price': '3900',
-    'fav':ItemWidget.favorite,
+    'rate': 4.5,
+    'price': 3900,
+    'fav': ItemWidget.favorite,
   },
   {
     'name': 'Horizon Shahrazad Hotel',
     // 'title': 'discrption discrption discrption',
     'img': 'assets/h1_4.jpg',
-    'rate': 4.8,
-    'price': '4000',
-    'fav':ItemWidget.favorite,
+    'rate': 4.6,
+    'price': 4000,
+    'fav': ItemWidget.favorite,
   },
   {
     'name': 'Indiana Hotel',
     // 'title': 'discrption discrption discrption',
     'img': 'assets/h1_5.jpg',
-    'rate': 4.8,
-    'price': '3100',
-    'fav':ItemWidget.favorite,
+    'rate': 4.9,
+    'price': 3100,
+    'fav': ItemWidget.favorite,
   },
   {
     'name': 'Holidays Express Hotel',
     // 'title': 'discrption discrption discrption',
     'img': 'assets/h1_6.jpg',
-    'rate': 4.8,
-    'price': '3700',
-    'fav':ItemWidget.favorite,
+    'rate': 4.4,
+    'price': 3700,
+    'fav': ItemWidget.favorite,
   },
 ];
 
@@ -255,65 +294,65 @@ List item_data2 = [
     'name': 'Pyramisa Hotel Luxor',
     // 'title': 'discrption discrption discrption',
     'img': 'assets/h2_1.jpg',
-    'rate': 4.8,
-    'price': '2500',
-    'fav':ItemWidget.favorite,
+    'rate': 3.8,
+    'price': 2500,
+    'fav': ItemWidget.favorite,
   },
   {
     'name': 'فندق نفرتيتى',
     // 'title': 'discrption discrption discrption',
     'img': 'assets/h2_2.jpg',
-    'rate': 4.8,
-    'price': '2300',
-    'fav':ItemWidget.favorite,
+    'rate': 3.5,
+    'price': 2300,
+    'fav': ItemWidget.favorite,
   },
   {
     'name': 'Djorff Palace',
     // 'title': 'discrption discrption discrption',
     'img': 'assets/h2_3.jpg',
-    'rate': 4.8,
-    'price': '2300',
-    'fav':ItemWidget.favorite,
+    'rate': 3.7,
+    'price': 2300,
+    'fav': ItemWidget.favorite,
   },
   {
     'name': 'فندق سوزانا الأقصر',
     // 'title': 'discrption discrption discrption',
     'img': 'assets/h2_4.jpg',
-    'rate': 4.8,
-    'price': '2900',
-    'fav':ItemWidget.favorite,
+    'rate': 3.3,
+    'price': 2900,
+    'fav': ItemWidget.favorite,
   },
   {
     'name': 'M/S Nephtis Nile Cruise',
     // 'title': 'discrption discrption discrption',
     'img': 'assets/h2_5.jpg',
-    'rate': 4.8,
-    'price': '2000',
-    'fav':ItemWidget.favorite,
+    'rate': 3.8,
+    'price': 2000,
+    'fav': ItemWidget.favorite,
   },
   {
     'name': 'هيلتون الاقصر ريزورت اند سبا',
     // 'title': 'discrption discrption discrption',
     'img': 'assets/h2_6.jpg',
-    'rate': 4.8,
-    'price': '2100',
-    'fav':ItemWidget.favorite,
+    'rate': 3.0,
+    'price': 2100,
+    'fav': ItemWidget.favorite,
   },
   {
     'name': 'Steigenberger Resort Achti',
     // 'title': 'discrption discrption discrption',
     'img': 'assets/h2_7.jpg',
-    'rate': 4.8,
-    'price': '2000',
-    'fav':ItemWidget.favorite,
+    'rate': 3.9,
+    'price': 2000,
+    'fav': ItemWidget.favorite,
   },
   {
     'name': 'Sonesta St. George Hotel - Convention Center',
     // 'title': 'discrption discrption discrption',
     'img': 'assets/h2_8.jpg',
-    'rate': 4.8,
-    'price': '2800',
-    'fav':ItemWidget.favorite,
+    'rate': 3.6,
+    'price': 2800,
+    'fav': ItemWidget.favorite,
   },
 ];
 
@@ -322,67 +361,247 @@ List item_data3 = [
     'name': 'Nile Villa Hotel',
     // 'title': 'discrption discrption discrption',
     'img': 'assets/h3_1.jpg',
-    'rate': 4.8,
-    'price': '1000',
-    'fav':ItemWidget.favorite,
+    'rate': 2.8,
+    'price': 1000,
+    'fav': ItemWidget.favorite,
   },
   {
     'name': 'Comfort Pyramids',
     // 'title': 'discrption discrption discrption',
     'img': 'assets/h3_2.jpg',
-    'rate': 4.8,
-    'price': '1500',
-    'fav':ItemWidget.favorite,
+    'rate': 3.0,
+    'price': 1500,
+    'fav': ItemWidget.favorite,
   },
   {
     'name': 'Royal Inn Residence',
     // 'title': 'discrption discrption discrption',
     'img': 'assets/h3_3.jpg',
-    'rate': 4.8,
-    'price': '500',
-    'fav':ItemWidget.favorite,
+    'rate': 3.0,
+    'price': 500,
+    'fav': ItemWidget.favorite,
   },
   {
     'name': 'Victory Of Downtown Hotel',
     // 'title': 'discrption discrption discrption',
     'img': 'assets/h3_4.jpg',
-    'rate': 4.8,
-    'price': '800',
-    'fav':ItemWidget.favorite,
+    'rate': 3.1,
+    'price': 800,
+    'fav': ItemWidget.favorite,
   },
   {
     'name': 'Pyramid Edge Hotel',
     // 'title': 'discrption discrption discrption',
     'img': 'assets/h3_5.jpg',
-    'rate': 4.8,
-    'price': '1500',
-    'fav':ItemWidget.favorite,
+    'rate': 3.2,
+    'price': 1500,
+    'fav': ItemWidget.favorite,
   },
   {
     'name': 'Atlas International Hotels',
     // 'title': 'discrption discrption discrption',
     'img': 'assets/h3_6.jpg',
-    'rate': 4.8,
-    'price': '1300',
-    'fav':ItemWidget.favorite,
+    'rate': 3.1,
+    'price': 1300,
+    'fav': ItemWidget.favorite,
   },
   {
     'name': 'Best View Pyramids Hotel',
     // 'title': 'discrption discrption discrption',
     'img': 'assets/h3_7.jpg',
-    'rate': 4.8,
-    'price': '1000',
-    'fav':ItemWidget.favorite,
+    'rate': 2.8,
+    'price': 1000,
+    'fav': ItemWidget.favorite,
   },
   {
     'name': 'Victory Of Downtown Hotel',
     // 'title': 'discrption discrption discrption',
     'img': 'assets/h3_8.jpg',
-    'rate': 4.8,
-    'price': '900',
-    'fav':ItemWidget.favorite,
+    'rate': 3.0,
+    'price': 900,
+    'fav': ItemWidget.favorite,
   },
 ];
+
+List item_data = [
+  {
+    'name': 'Safir Hotel Cairo',
+    // 'title': 'discrption discrption discrption',
+    'img': 'assets/h1_1.jpg',
+    'rate': 4.8,
+    'price': 3700,
+    'fav': ItemWidget.favorite,
+  },
+  {
+    'name': 'Sheraton Cairo Hotel',
+    // 'title': 'discrption discrption discrption',
+    'img': 'assets/h1_2.jpg',
+    'rate': 4.9,
+    'price': 3500,
+    'fav': ItemWidget.favorite,
+  },
+  {
+    'name': 'Pyramisa Cairo Suites',
+    // 'title': 'discrption discrption discrption',
+    'img': 'assets/h1_3.jpg',
+    'rate': 4.5,
+    'price': 3900,
+    'fav': ItemWidget.favorite,
+  },
+  {
+    'name': 'Horizon Shahrazad Hotel',
+    // 'title': 'discrption discrption discrption',
+    'img': 'assets/h1_4.jpg',
+    'rate': 4.6,
+    'price': 4000,
+    'fav': ItemWidget.favorite,
+  },
+  {
+    'name': 'Indiana Hotel',
+    // 'title': 'discrption discrption discrption',
+    'img': 'assets/h1_5.jpg',
+    'rate': 4.9,
+    'price': 3100,
+    'fav': ItemWidget.favorite,
+  },
+  {
+    'name': 'Holidays Express Hotel',
+    // 'title': 'discrption discrption discrption',
+    'img': 'assets/h1_6.jpg',
+    'rate': 4.4,
+    'price': 3700,
+    'fav': ItemWidget.favorite,
+  },
+  {
+    'name': 'Pyramisa Hotel Luxor',
+    // 'title': 'discrption discrption discrption',
+    'img': 'assets/h2_1.jpg',
+    'rate': 3.8,
+    'price': 2500,
+    'fav': ItemWidget.favorite,
+  },
+  {
+    'name': 'فندق نفرتيتى',
+    // 'title': 'discrption discrption discrption',
+    'img': 'assets/h2_2.jpg',
+    'rate': 3.5,
+    'price': 2300,
+    'fav': ItemWidget.favorite,
+  },
+  {
+    'name': 'Djorff Palace',
+    // 'title': 'discrption discrption discrption',
+    'img': 'assets/h2_3.jpg',
+    'rate': 3.7,
+    'price': 2300,
+    'fav': ItemWidget.favorite,
+  },
+  {
+    'name': 'فندق سوزانا الأقصر',
+    // 'title': 'discrption discrption discrption',
+    'img': 'assets/h2_4.jpg',
+    'rate': 3.3,
+    'price': 2900,
+    'fav': ItemWidget.favorite,
+  },
+  {
+    'name': 'M/S Nephtis Nile Cruise',
+    // 'title': 'discrption discrption discrption',
+    'img': 'assets/h2_5.jpg',
+    'rate': 3.8,
+    'price': 2000,
+    'fav': ItemWidget.favorite,
+  },
+  {
+    'name': 'هيلتون الاقصر ريزورت اند سبا',
+    // 'title': 'discrption discrption discrption',
+    'img': 'assets/h2_6.jpg',
+    'rate': 3.0,
+    'price': 2100,
+    'fav': ItemWidget.favorite,
+  },
+  {
+    'name': 'Steigenberger Resort Achti',
+    // 'title': 'discrption discrption discrption',
+    'img': 'assets/h2_7.jpg',
+    'rate': 3.9,
+    'price': 2000,
+    'fav': ItemWidget.favorite,
+  },
+  {
+    'name': 'Sonesta St. George Hotel - Convention Center',
+    // 'title': 'discrption discrption discrption',
+    'img': 'assets/h2_8.jpg',
+    'rate': 3.6,
+    'price': 2800,
+    'fav': ItemWidget.favorite,
+  },
+  {
+    'name': 'Nile Villa Hotel',
+    // 'title': 'discrption discrption discrption',
+    'img': 'assets/h3_1.jpg',
+    'rate': 2.8,
+    'price': 1000,
+    'fav': ItemWidget.favorite,
+  },
+  {
+    'name': 'Comfort Pyramids',
+    // 'title': 'discrption discrption discrption',
+    'img': 'assets/h3_2.jpg',
+    'rate': 3.0,
+    'price': 1500,
+    'fav': ItemWidget.favorite,
+  },
+  {
+    'name': 'Royal Inn Residence',
+    // 'title': 'discrption discrption discrption',
+    'img': 'assets/h3_3.jpg',
+    'rate': 3.0,
+    'price': 500,
+    'fav': ItemWidget.favorite,
+  },
+  {
+    'name': 'Victory Of Downtown Hotel',
+    // 'title': 'discrption discrption discrption',
+    'img': 'assets/h3_4.jpg',
+    'rate': 3.1,
+    'price': 800,
+    'fav': ItemWidget.favorite,
+  },
+  {
+    'name': 'Pyramid Edge Hotel',
+    // 'title': 'discrption discrption discrption',
+    'img': 'assets/h3_5.jpg',
+    'rate': 3.2,
+    'price': 1500,
+    'fav': ItemWidget.favorite,
+  },
+  {
+    'name': 'Atlas International Hotels',
+    // 'title': 'discrption discrption discrption',
+    'img': 'assets/h3_6.jpg',
+    'rate': 3.1,
+    'price': 1300,
+    'fav': ItemWidget.favorite,
+  },
+  {
+    'name': 'Best View Pyramids Hotel',
+    // 'title': 'discrption discrption discrption',
+    'img': 'assets/h3_7.jpg',
+    'rate': 2.8,
+    'price': 1000,
+    'fav': ItemWidget.favorite,
+  },
+  {
+    'name': 'Victory Of Downtown Hotel',
+    // 'title': 'discrption discrption discrption',
+    'img': 'assets/h3_8.jpg',
+    'rate': 3.0,
+    'price': 900,
+    'fav': ItemWidget.favorite,
+  },
+];
+
 //const List student_data = [
 //  {
 //    'name': '',
