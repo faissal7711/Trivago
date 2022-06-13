@@ -172,4 +172,10 @@ const List student_data = [
     'img': 'assets/profile_icon.png',
     'rate': 4.8,
   },
+  {
+    'name': 'Khaled Mohamed Abdel Raof',
+    'title': '20182377',
+    'img': 'assets/profile_icon.png',
+    'rate': 4.8,
+  },
 ];
